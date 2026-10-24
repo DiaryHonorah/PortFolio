@@ -1,0 +1,11 @@
+# robots.txt pour le portfolio
+User-agent: *
+Allow: /
+Disallow: /#admin
+Disallow: /admin
+
+# Sitemap
+Sitemap: https://votre-site.com/sitemap.xml
+
+# Délai de crawl
+Crawl-delay: 5

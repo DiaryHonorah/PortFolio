@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:400,600,700,800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0066FF;
+  --color-secondary: #00D4FF;
+  --color-accent: #FF6B00;
+  --color-dark: #0F0F1A;
+  --font-family-sans: 'Inter', sans-serif;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #0066FF, #00D4FF, #FF6B00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #0F0F1A 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+/* Spinner de chargement */
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #0066FF;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation pour les messages */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+
+
+/* Animation pour les messages */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* frontend/src/index.css - Ajouter ces styles */
+
+/* Animations avancées */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Classes d'animation */
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+    animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fadeInRight {
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-zoomIn {
+    animation: zoomIn 0.8s ease-out forwards;
+}
+
+.animate-slideInUp {
+    animation: slideInUp 0.8s ease-out forwards;
+}
+
+.animate-bounceIn {
+    animation: bounceIn 1s ease-out forwards;
+}
+
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Animation au scroll */
+.animate-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.translate-y-10 {
+    transform: translateY(10px);
+}
+
+.transition-all {
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Stagger children */
+.stagger-children > *:nth-child(1) { transition-delay: 0ms; }
+.stagger-children > *:nth-child(2) { transition-delay: 100ms; }
+.stagger-children > *:nth-child(3) { transition-delay: 200ms; }
+.stagger-children > *:nth-child(4) { transition-delay: 300ms; }
+.stagger-children > *:nth-child(5) { transition-delay: 400ms; }
+.stagger-children > *:nth-child(6) { transition-delay: 500ms; }
+
+/* ========== LOGIN ANIMATIONS ========== */
+
+/* Animation d'erreur (shake) */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+.animate-shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Animation de succès (pulse) */
+@keyframes loginSuccess {
+    0% { transform: scale(1); border-color: rgba(0, 212, 255, 0.3); }
+    50% { transform: scale(1.02); border-color: rgba(0, 212, 255, 0.8); box-shadow: 0 0 40px rgba(0, 212, 255, 0.2); }
+    100% { transform: scale(1); border-color: rgba(255, 255, 255, 0.1); }
+}
+
+.login-success {
+    animation: loginSuccess 0.6s ease-in-out;
+}
+
+/* Animation d'erreur sur la carte */
+.login-error {
+    animation: shake 0.5s ease-in-out;
+    border-color: rgba(255, 0, 0, 0.3) !important;
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.1) !important;
+}
+
+/* Loader personnalisé */
+.loader-ring {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #0066FF;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Fond animé */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.login-bg-animated {
+    background: linear-gradient(-45deg, #0F0F1A, #1a1a2e, #16213e, #0F0F1A);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
+
+/* ========== FIN LOGIN ANIMATIONS ========== */
+
+/* frontend/src/index.css */
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 4s linear infinite;
+}
+
+/* Scrollbar personnalisée pour les tableaux */
+.scrollbar-thin::-webkit-scrollbar {
+    height: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(0, 102, 255, 0.3);
+    border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 102, 255, 0.5);
+}
+
+/* Animation pour le menu mobile */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-in {
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+/* Styles pour l'éditeur Quill en mode sombre */
+.ql-toolbar {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px 8px 0 0 !important;
+}
+
+.ql-toolbar .ql-stroke {
+    stroke: #9ca3af !important;
+}
+
+.ql-toolbar .ql-fill {
+    fill: #9ca3af !important;
+}
+
+.ql-toolbar button:hover .ql-stroke {
+    stroke: #00D4FF !important;
+}
+
+.ql-toolbar button:hover .ql-fill {
+    fill: #00D4FF !important;
+}
+
+.ql-toolbar .ql-active .ql-stroke {
+    stroke: #00D4FF !important;
+}
+
+.ql-toolbar .ql-active .ql-fill {
+    fill: #00D4FF !important;
+}
+
+.ql-container {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 0 0 8px 8px !important;
+    min-height: 200px !important;
+    color: #e5e7eb !important;
+    font-size: 14px !important;
+}
+
+.ql-editor {
+    min-height: 200px !important;
+    color: #e5e7eb !important;
+}
+
+.ql-editor.ql-blank::before {
+    color: #6b7280 !important;
+    font-style: italic !important;
+}
+
+.ql-editor a {
+    color: #00D4FF !important;
+}
+
+.ql-editor blockquote {
+    border-left-color: #00D4FF !important;
+    color: #9ca3af !important;
+}
+
+.ql-editor code {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #f472b6 !important;
+}
+
+.ql-editor pre.ql-syntax {
+    background: rgba(0, 0, 0, 0.3) !important;
+    color: #e5e7eb !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+}
+
+/* Responsive pour l'éditeur */
+@media (max-width: 640px) {
+    .ql-toolbar {
+        flex-wrap: wrap !important;
+        gap: 2px !important;
+    }
+    .ql-toolbar .ql-formats {
+        margin-right: 4px !important;
+    }
+    .ql-editor {
+        font-size: 13px !important;
+        min-height: 150px !important;
+    }
+}
+
+/* Animation pour les notifications */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out forwards;
+}
+
+.animate-slide-out-right {
+    animation: slideOutRight 0.3s ease-in forwards;
+}
+
+/* Animations pour la recherche */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-slide-down {
+    animation: slideDown 0.25s ease-out forwards;
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* frontend/src/index.css - Ajouter si pas déjà présent */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* ========== ANIMATIONS PWA ========== */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.4s ease-out forwards;
+}
+
+/* ========== MODE STANDALONE ========== */
+@media (display-mode: standalone) {
+    /* Masquer les éléments inutiles en mode app */
+    .hide-in-standalone {
+        display: none;
+    }
+}
